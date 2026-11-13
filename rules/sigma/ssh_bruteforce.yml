@@ -1,0 +1,20 @@
+title: SSH Brute Force Attempts
+id: 5b0a4c0e-0000-4000-8000-000000000001
+status: experimental
+description: Detects many failed SSH logins from one source address in a short period.
+author: AegisSOC
+date: 2026/11/12
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains: 'Failed password'
+  timeframe: 5m
+  condition: selection | count() by src_ip > 10
+falsepositives:
+  - Misconfigured automation using stale credentials
+level: medium
+tags:
+  - attack.credential_access
+  - attack.t1110
