@@ -1,6 +1,6 @@
 # Devlog
 
-## Day 1: 2026-11-12
+## Day 1: 2026-11-24
 
 **Done**
 - Created the repo structure and starter code
