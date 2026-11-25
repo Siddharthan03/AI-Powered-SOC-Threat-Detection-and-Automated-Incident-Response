@@ -1,6 +1,6 @@
 # Devlog
 
-## Day 1: 2026-11-24
+## Day 1: 2026-11-12
 
 **Done**
 - Created the repo structure and starter code
@@ -24,5 +24,15 @@
 - The Ubuntu installer only allocates about half the disk to the root volume by default; `lvextend -r` fixes it online.
 - On 8 GB RAM, a desktop environment costs about 1 GB that the lab needs.
 
-**Next**
-- Day 3: install the Wazuh manager (manager only, no indexer or dashboard)
+## Day 3: 2026-11-25
+
+**Done**
+- Added the Wazuh apt repository and installed wazuh-manager 4.14.10 (ARM64) on Ubuntu 26.04
+- Manager only, no indexer or dashboard, to fit 8 GB RAM; footprint is about 1 GB
+- Verified all core daemons running
+- Verified detection: rule 5710 fired on failed SSH logins
+
+**Learned**
+- Checking the package list for ARM64 builds before installing avoided a dead end.
+- The optional daemons (cluster, email, integrator) being "not running" is expected.
+- Wazuh alerts carry a rule ID, a severity level and compliance tags, and are also written as JSON, which our ingest service will read.
