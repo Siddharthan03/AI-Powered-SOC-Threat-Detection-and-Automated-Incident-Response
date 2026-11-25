@@ -11,9 +11,6 @@
 **Learned**
 - Log fields are attacker-controlled, so alert content has to be treated as untrusted input.
 
-**Next**
-- Day 2: build the lab VMs (Linux and Windows with Sysmon)
-
 ## Day 2: 2026-11-25
 
 **Done**
